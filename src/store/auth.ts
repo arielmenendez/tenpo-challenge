@@ -1,10 +1,10 @@
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 interface AuthState {
-  token: string | null
-  login: (token: string) => void
-  logout: () => void
+  token: string | null;
+  login: (token: string) => void;
+  logout: () => void;
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -18,4 +18,4 @@ export const useAuthStore = create<AuthState>()(
       name: 'auth-storage',
     }
   )
-)
+);

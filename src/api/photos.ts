@@ -8,12 +8,12 @@ export type Photo = {
   thumbnailUrl: string;
 };
 
-export const getPhotos = async (): Promise<Photo[]> => {
-  const { data } = await client.get<Photo[]>('/photos?_limit=2000')
-
-  return data.map((photo) => ({
-    ...photo,
-    thumbnailUrl: `https://placehold.co/150x150?text=${encodeURIComponent(photo.id)}`,
-    url: `https://placehold.co/600x400?text=Photo+${encodeURIComponent(photo.id)}`,
-  }))
-}
+export const getPhotos = async (
+  start: number,
+  limit: number
+): Promise<Photo[]> => {
+  const { data } = await client.get<Photo[]>(
+    `/photos?_start=${start}&_limit=${limit}`
+  );
+  return data;
+};

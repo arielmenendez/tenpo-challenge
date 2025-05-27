@@ -1,2 +1,2 @@
-import PhotoList from './PhotoList'
-export default PhotoList
+import PhotoList from './PhotoList';
+export default PhotoList;
